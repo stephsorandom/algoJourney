@@ -61,8 +61,51 @@ Output: 1
 //check if next number is the same 
 
 var singleNumber = function(nums) {
-  var arr = nums.sort()    //sorts array....placing numbers in ascending order
-    for (let i=0; i < nums.length; i++) {   //for loop goes through whole array
-      if (nums[i] !== nums[i+1]) return nums[i]    //if the first nums is NOT equal to next nums .... return nums 
-    }
+    nums.sort((a,b) => a - b)    //sorts array....placing numbers in ascending order
+    for(let i = 0;i < nums.length;i += 2)   //for loop goes through whole array
+    if(nums[i] !== nums[i+1]) return nums[i];    //if the first nums is NOT equal to next nums .... return nums 
+}
+
+
+
+
+
+
+5/24      - MEDIUM LEVEL
+287. Find the Duplicate Number
+
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+There is only one repeated number in nums, return this repeated number.
+
+You must solve the problem without modifying the array nums and uses only constant extra space.
+
+ 
+
+Example 1:
+Input: nums = [1,3,4,2,2]
+Output: 2
+
+Example 2:
+Input: nums = [3,1,3,4,2]
+Output: 3
+
+Example 3:
+Input: nums = [1,1]
+Output: 1
+
+Example 4:
+Input: nums = [1,1,2]
+Output: 1
+
+//find repeated number
+
+//sort and loop through
+//compare nums[i] to nums[i+1]
+var findDuplicate = function(nums) {
+    nums.sort((a,b) => a-b) //sort method
+  
+  for(let i = 0; i < nums.length; i++) {
+    if (nums[i] == nums[i+1]) return nums[i] //compares num and next num to each other 
+  }
 };
