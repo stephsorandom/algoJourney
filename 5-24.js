@@ -109,3 +109,38 @@ var findDuplicate = function(nums) {
     if (nums[i] == nums[i+1]) return nums[i] //compares num and next num to each other 
   }
 };
+
+5/24
+217. Contains Duplicate
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+
+//does array contain duplicates?
+//if duplicate return true
+//no duplicates return false
+
+//sort array
+//loop through array
+//does nums[1] == nums[1+1]?
+
+
+const containsDuplicate = nums => {
+    nums = nums.sort()
+    for (let i = 1; i < nums.length; i++) {
+      if (nums[i - 1] === nums[i]) {
+        return true
+      }
+    }
+    return false
+}
