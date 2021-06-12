@@ -11,6 +11,7 @@ Example 2:
 Input: nums = [0]
 Output: [0]
 
+
 //move all 0 to end of array
 //do not make new array 
 
